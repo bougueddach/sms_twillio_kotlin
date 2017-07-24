@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home sweet Home</title>
+</head>
+<body>
+<div align="center"><img src="https://s.gravatar.com/avatar/7de2c14068eeb7689b83a9fc674a230a?size=496&amp;default=retro;" width="350"/></div>
+<!--/*@thymesVar id="sms" type="com.example.sms.Model.ModelSMS"*/-->
+<form th:object="${sms}" method="post">
+    <table border="0" align="center">
+        <tr>
+            <td>Numero destinataire</td>
+            <td><input type="tel" th:field="*{phoneNm}" placeholder="+212XXXXXXXXX" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Message</td> <td><input type="text" th:field="*{message}" style="height:110px;font-size:18pt;" required="required" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"> <input type="submit" value="SEND SMS" style="height:50px;font-size:20pt;"/></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
